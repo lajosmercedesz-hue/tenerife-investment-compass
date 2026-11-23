@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- The site is a single scrolling page (`src/routes/index.tsx`) composed from section components in `src/components/site/`; the owner explicitly asked for a one-page site, so sections use in-page anchors.
+- Contact details and the enquiry mailto/WhatsApp builders live only in `src/lib/contact.ts` (covered by `src/test/contact.test.ts`); never hardcode them in components.
+- Brand styles (colors, buttons, fields, reveal animation) are defined as tokens and `@utility` classes in `src/styles.css`; components use those, not raw colors.
